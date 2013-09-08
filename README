@@ -1,0 +1,56 @@
+Introduction
+============
+The librpims5x project provides C library (with Python 3 bindings) for
+various pressure sensors produced by Measurement Specialties
+
+    http://www.meas-spec.com/pressure-sensors/board-level-pressure-sensors/digital-pressure-sensor-modules.aspx
+
+The library was tested with MS5541C pressure sensor, but it should work out
+of the box with other sensors conforming to specification described in
+MS5541C datasheet
+
+    http://www.meas-spec.com/downloads/MS5541C.pdf
+
+The code of the library is licensed under GPLv3 license, see COPYING file
+for details. As stated in the license, there is no warranty, so any
+joy from destroying sensors or Raspberry Pi boards belongs to you only.
+
+Connecting MS5541C Sensor
+=========================
+The MS5541C pressure sensor should be connected to Raspberry Pi via SPI
+interface. The MCLK is provided by
+`GPIO 4 (GPCLK0) <http://elinux.org/RPi_Low-level_peripherals>`_.
+
+The schematics of connection::
+
+    Sensor       Raspberry Pi
+    Pin Name     Pin     Name
+    ------------------------------------
+    1   SCLK     23      GPIO 11 (SCLK)
+    2   VSS      25      Ground
+    5   VDD      17      3v3 Power
+    6   MCLK      7      GPIO 4 (GPCLK0)
+    7   DIN      19      GPIO 10 (MOSI)
+    8   DOUT     21      GPIO 11 (MISO)
+
+Using Library
+=============
+The interface is pretty straightforward, see examples directory.
+
+Acknowledgements
+================
+The librpims5x project took ideas and code from various other projects
+
+- DiveDuino
+
+  - http://www.diveduino.com/ (dead page as of 2013-09-07)
+  - http://forum.arduino.cc/index.php?PHPSESSID=u5kfhdtp0hmbjpp22ugf2rhmp1&topic=67188.0
+    (calculations)
+
+- Code from "GPIO on a Raspberry Pi" and "Physical computing with Raspberry
+  Pi" projects
+
+  - http://code.google.com/p/raspberry-gpio-python/
+  - http://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/robot/cheat_sheet/
+  - http://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/robot/resources/RPi.GPIO-0.3.1a.zip
+

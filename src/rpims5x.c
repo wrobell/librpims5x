@@ -254,7 +254,7 @@ int rpims5x_read(uint16_t *pressure, uint16_t *temp) {
     off = clbw_2 + (((clbw_4 - 250) * dt) >> 12) + 10000;
     sens = (clbw_1 / 2) + (((clbw_3 + 200) * dt) >> 13) + 3000;
     *pressure = (sens * (d1 - off) >> 12) + 1000;
-    dt2 = dt - ((dt >> 7 * dt >> 7) >> 3);
+    dt2 = dt - (((dt >> 7) * (dt >> 7)) >> 3);
     temp_r = 200 + (dt2 * (clbw_6 + 100) >> 11);
 
     DEBUG_LOG("rpims5x: d1 %d\n", d1);

@@ -236,14 +236,14 @@ int rpims5x_init() {
 }
 
 int rpims5x_read(uint16_t *pressure, uint16_t *temp) {
-    uint16_t d1;
-    uint16_t d2;
-    uint16_t ut1;
-    uint16_t dt;
-    uint16_t dt2;
-    uint16_t off;
-    uint16_t sens;
-    uint16_t temp_r;
+    int32_t d1;
+    int32_t d2;
+    int32_t ut1;
+    int32_t dt;
+    int32_t dt2;
+    int32_t off;
+    int32_t sens;
+    int32_t temp_r;
 
     d2 = sensor_value_raw((char[]){0x0f, 0x20});
     d1 = sensor_value_raw((char[]){0x0f, 0x40});

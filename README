@@ -31,7 +31,7 @@ The schematics of connection::
     5   VDD      17      3v3 Power
     6   MCLK      7      GPIO 4 (GPCLK0)
     7   DIN      19      GPIO 10 (MOSI)
-    8   DOUT     21      GPIO 11 (MISO)
+    8   DOUT     21      GPIO 9 (MISO)
 
 Using Library
 =============

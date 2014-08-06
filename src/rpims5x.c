@@ -72,7 +72,7 @@ static int gpio_init() {
     uint8_t *gpio_mem;
     uint8_t *clk_mem;
 
-    if ((mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0)
+    if ((mem_fd = open("/dev/mem", O_RDWR | O_SYNC) ) < 0)
         return ERROR_SETUP;
 
     // Allocate MAP block
